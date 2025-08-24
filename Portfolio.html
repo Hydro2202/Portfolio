@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiden Villapando | Student Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a',
+                        secondary: '#3b82f6',
+                        accent: '#60a5fa',
+                        dark: '#111827',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-dark shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-secondary">RV</div>
+                    <span class="ml-2 text-xl font-semibold">Raiden Villapando</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-light hover:text-secondary transition-colors">Home</a>
+                    <a href="#about" class="text-light hover:text-secondary transition-colors">About</a>
+                    <a href="#skills" class="text-light hover:text-secondary transition-colors">Skills</a>
+                    <a href="#projects" class="text-light hover:text-secondary transition-colors">Projects</a>
+                    <a href="#contact" class="text-light hover:text-secondary transition-colors">Contact</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-light">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-t">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#home" class="block text-light hover:text-secondary">Home</a>
+                <a href="#about" class="block text-light hover:text-secondary">About</a>
+                <a href="#skills" class="block text-light hover:text-secondary">Skills</a>
+                <a href="#projects" class="block text-light hover:text-secondary">Projects</a>
+                <a href="#contact" class="block text-light hover:text-secondary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="home" class="min-h-screen flex items-center justify-center hero-gradient text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="text-accent">Raiden Villapando</span>
+                    </h1>
+                    <div class="typewriter text-xl md:text-2xl mb-8">
+                        BSIT Student & Aspiring Developer
+                    </div>
+                    <p class="text-lg mb-8 opacity-90">
+                        Specializing in Web and Mobile Application. Passionate about building responsive, accessible, and beautiful applications.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#about" class="bg-secondary hover:bg-accent text-white px-8 py-3 rounded-lg font-semibold transition-colors transform hover:scale-105">
+                            About Me
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="glass-effect rounded-2xl p-6 floating">
+                        <img src="FormalPic.jpg" alt="Professional headshot of Raiden Villapando, a smiling student developer wearing smart casual attire" class="rounded-2xl w-full h-auto shadow-2xl" onerror="this.src='https://placehold.co/400x500'"/>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-accent text-white px-4 py-2 rounded-full font-semibold animate-pulse-slow">
+                        Student Developer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About Me</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="RAI.jpg" alt="Raiden Villapando working at his student workstation with laptop and coding materials" class="rounded-2xl shadow-xl w-full" onerror="this.src='https://placehold.co/600x400'"/>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Passionate Student Developer</h3>
+                    <p class="text-light mb-6">
+                        I am a Bachelor of Science in Information Technology student with a strong passion for web and mobile development. I'm constantly learning and expanding my skills to create innovative digital solutions.
+                    </p>
+                    <p class="text-light mb-6">
+                        I'm flexible, eager to learn, and committed to mastering new skills through training and hands-on experience. My goal is to create applications that are not only functional but also provide exceptional user experiences.
+                    </p>
+                    <a href="https://www.canva.com/design/DAGe50g6xuE/UWE2EoNCFOPt-2KsxNop_Q/edit?utm_content=DAGe50g6xuE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="inline-flex items-center text-secondary font-semibold hover:text-accent">
+                        View Resume
+                        <i class="fas fa-eye ml-2"></i>
+                    </a>
+
+                    <br><br>
+                    <a href="Raiden Resume.pdf" target="_blank" class="inline-flex items-center text-secondary font-semibold hover:text-accent">
+                        Download Resume
+                        <i class="fas fa-download ml-2"></i>
+                    </a>
+                    
+                    
+                   
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Skills & Expertise</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Programming Languages -->
+                <div class="skill-card bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-code text-4xl text-secondary mb-3"></i>
+                        <h3 class="font-semibold text-lg mb-2">Programming</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Dart</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Java</span>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="skill-card bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-globe text-4xl text-secondary mb-3"></i>
+                        <h3 class="font-semibold text-lg mb-2">Web Development</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">HTML5</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">CSS</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Development -->
+                <div class="skill-card bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-mobile-alt text-4xl text-secondary mb-3"></i>
+                        <h3 class="font-semibold text-lg mb-2">Mobile Development</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Flutter</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Dart</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill-card bg-gray-900 p-6 rounded-xl shadow-md transition-all duration-300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-tools text-4xl text-secondary mb-3"></i>
+                        <h3 class="font-semibold text-lg mb-2">Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">VS Code</span>
+                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Project 1 - ShopEdge -->
+                <div class="project-card group bg-gray-900 rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="https://github.com/Hydro2202/ShopEdge/blob/main/Screenshot%202025-08-25%20013006.png?raw=true" alt="ShopEdge project interface showcasing an e-commerce platform with modern design" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400'"/>
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                            <div class="text-center">
+                                <a href="https://hydro2202.github.io/ShopEdge/main.html" target="_blank" class="bg-secondary text-white px-4 py-2 rounded-lg mr-2 hover:bg-accent">Live Demo</a>
+                                <a href="https://github.com/Hydro2202/ShopEdge" target="_blank" class="border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">ShopEdge</h3>
+                        <p class="text-light mb-4">An e-commerce platform with a modern design and user-friendly interface built with HTML, CSS, and JavaScript.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-sm">HTML</span>
+                            <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-sm">CSS</span>
+                            <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-sm">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Sample Mobile App -->
+                <div class="project-card group bg-gray-900 rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="app.png" alt="This project is a digital solution designed to streamline the student experience with administrative services like grade requests and tuition payments. Created in Figma, it enables students to track the status of their requests and manage their tasks remotely, ensuring they stay updated even when not on campus." class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400'"/>
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                            <div class="text-center">
+                                <a href="https://www.figma.com/proto/TOImInY6ELYx6oyuEEr5Yc/Project?page-id=0%3A1&node-id=702-10974&p=f&viewport=2126%2C870%2C0.07&t=v49jgBewyROXirXR-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=702%3A10974" target="_blank" class="bg-secondary text-white px-4 py-2 rounded-lg mr-2 hover:bg-accent">Live Demo</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">UniPlanner</h3>
+                        <p class="text-light mb-4">This project is a digital solution designed to streamline the student experience with administrative services like grade requests and tuition payments. Created in Figma, it enables students to track the status of their requests and manage their tasks remotely, ensuring they stay updated even when not on campus.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-sm">Figma</span>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Mobile App -->
+                <div class="project-card group bg-gray-900 rounded-xl shadow-md overflow-hidden">
+                    <div class="relative">
+                        <img src="#" alt="Web application dashboard with analytics and modern UI components" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400'"/>
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+                            <div class="text-center">
+                              
+                                <a href="https://github.com/Hydro2202/Hotel-Booking" target="_blank" class="border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-primary">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Hotel Booking</h3>
+                        <p class="text-light mb-4">A responsive Hotel-Booking application that you can book.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-sm">Dart</span>
+                            <span class="bg-blue-900 text-blue-200 px-2 py-1 rounded text-sm">Flutter</span>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="text-center">
+                <a href="#" class="inline-flex items-center text-secondary font-semibold hover:text-accent">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Let's Connect</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                    <p class="text-light mb-8">
+                        I'm always interested in connecting with fellow developers, learning about new opportunities, and discussing potential projects. Feel free to reach out!
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-light">raidenvillapando623@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-light">+63 9291611289</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-light">Philippines, Quezon, Lucena City</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://www.linkedin.com/in/raiden-villapando-05b81b346" target="_blank" class="w-10 h-10 bg-secondary hover:bg-accent text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Hydro2202" target="_blank" class="w-10 h-10 bg-secondary hover:bg-accent text-white rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        
+                       
+                    </div>
+                </div>
+
+                <div>
+                    <form class="bg-gray-900 p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-semibold mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Your Name">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-700 bg-gray-800 text-white rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent" placeholder="Tell me about your project or just say hi!"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-secondary hover:bg-accent text-white py-3 px-6 rounded-lg font-semibold transition-colors transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4">Raiden Villapando</div>
+                <p class="text-gray-400 mb-8">BSIT Student & Aspiring Developer</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://www.linkedin.com/in/raiden-villapando-05b81b346" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/Hydro2202" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    
+                </div>
+                
+                <p class="text-gray-400 text-sm">
+                    © 2025 Raiden Villapando. Front end.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
