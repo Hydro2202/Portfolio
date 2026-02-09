@@ -61,24 +61,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-    const contactForm = document.querySelector('form');
+    emailjs.init("gNtFK9MNmaa5ib2pc");
+    const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
 
-            const formData = new FormData(this);
-            const name = formData.get('name') || document.getElementById('name').value;
-            const email = formData.get('email') || document.getElementById('email').value;
-            const message = formData.get('message') || document.getElementById('message').value;
-
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
 
             if (!name || !email || !message) {
                 alert('Please fill in all fields.');
                 return;
             }
-
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
@@ -86,22 +82,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-
-            const submitBtn = this.querySelector('button[type="submit"]');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-            
             submitBtn.textContent = 'Sending...';
-            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
 
- 
-            setTimeout(() => {
-                alert('Thank you for your message! I\'ll get back to you soon.');
+            emailjs.sendForm(
+                'service_4nm9ewo',   // 🔴 replace
+                'template_ype313l',  // 🔴 replace
+                contactForm
+            )
+            .then(() => {
+                alert('Message sent successfully!');
                 contactForm.reset();
+            })
+            .catch((error) => {
+                console.error('EmailJS Error:', error);
+                alert('Failed to send message. Please try again.');
+            })
+            .finally(() => {
                 submitBtn.textContent = originalText;
-                submitBtn.classList.remove('loading');
-            }, 1500);
+                submitBtn.disabled = false;
+            });
         });
     }
+
 
 
     const observerOptions = {
