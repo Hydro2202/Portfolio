@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+//email messaging area
+
     emailjs.init("gNtFK9MNmaa5ib2pc");
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -88,8 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
 
             emailjs.sendForm(
-                'service_4nm9ewo',   // 🔴 replace
-                'template_ype313l',  // 🔴 replace
+                'service_4nm9ewo',   
+                'template_ype313l',  
                 contactForm
             )
             .then(() => {
@@ -107,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
+//-------------------------------------------------
 
     const observerOptions = {
         threshold: 0.1,
