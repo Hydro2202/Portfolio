@@ -61,51 +61,95 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-//email messaging area
+    // ============================================
+    // �️ SECURITY VALIDATION FUNCTIONS (ACTIVE)
+    // ============================================
+    function setStatus(message, colorClass) {
+        const statusText = document.getElementById('form-status');
+        if (statusText) {
+            statusText.textContent = message;
+            statusText.className = `text-center mt-4 text-sm ${colorClass}`;
+        }
+    }
 
-    emailjs.init("gNtFK9MNmaa5ib2pc");
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isRecaptchaVerified() {
+        return window.grecaptcha && grecaptcha.getResponse().trim().length > 0;
+    }
+
+
+    // ============================================
+    // 📬 FORM SUBMISSION HANDLER (Active)
+    // 🛡️ ACTIVE SECURITY CHECKS:
+    //    ✅ Honeypot Detection
+    //    ✅ Field Validation
+    //    ✅ Email Format Validation
+    //    ✅ reCAPTCHA Check (if enabled)
+    // ============================================
     const contactForm = document.getElementById('contact-form');
+
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            setStatus('', '');
 
+            // 🍯 SECURITY: HONEYPOT CHECK (ACTIVE)
+            const website = document.getElementById('website').value.trim();
+            if (website) {
+                setStatus('🚨 Bot detected. Submission blocked.', 'text-red-400');
+                console.warn('Honeypot field filled - bot attempt blocked');
+                return;
+            }
+
+            // ✅ SECURITY: FIELD VALIDATION (ACTIVE)
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
             if (!name || !email || !message) {
-                alert('Please fill in all fields.');
+                setStatus('⚠️ Name, email, and message are required.', 'text-red-400');
                 return;
             }
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
+            // 📧 SECURITY: EMAIL FORMAT VALIDATION (ACTIVE)
+            if (!validateEmail(email)) {
+                setStatus('⚠️ Please enter a valid email address.', 'text-red-400');
                 return;
             }
 
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
+            // 🔐 SECURITY: RECAPTCHA CHECK (if enabled)
+            if (document.querySelector('.g-recaptcha:not([style*="display: none"])')) {
+                if (!window.grecaptcha || !isRecaptchaVerified()) {
+                    setStatus('⚠️ Please complete the reCAPTCHA challenge before sending.', 'text-red-400');
+                    return;
+                }
+            }
 
-            emailjs.sendForm(
-                'service_4nm9ewo',   
-                'template_ype313l',  
-                contactForm
-            )
-            .then(() => {
-                alert('Message sent successfully!');
-                contactForm.reset();
-            })
-            .catch((error) => {
-                console.error('EmailJS Error:', error);
-                alert('Failed to send message. Please try again.');
-            })
-            .finally(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
+            // ============================================
+            // ✅ SAFE DEFAULT: All validations passed
+            // Log to console + clear form
+            // Ready for future backend integration
+            // ============================================
+            console.log('✅ Form passed all security checks:', {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toISOString()
             });
+            
+            // Clear form inputs
+            contactForm.reset();
+            
+            // Reset reCAPTCHA if present
+            if (window.grecaptcha) {
+                grecaptcha.reset();
+            }
+            
+            // Show confirmation
+            setStatus('Thank you for reaching out! 📧 Please send your message directly to: raidenvillapando623@gmail.com for the fastest response.', 'text-green-400');
         });
     }
 

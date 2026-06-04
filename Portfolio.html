@@ -29,36 +29,6 @@
 
 
     </script>
-    <!-- <script>
-        (function () {
-            emailjs.init("gI97R5VSzmSVLQwsm"); // 🔴 PUT YOUR PUBLIC KEY HERE
-        })();
-
-        const form = document.getElementById("contact-form");
-        const statusText = document.getElementById("form-status");
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            statusText.textContent = "Sending message...";
-            statusText.className = "text-blue-400 text-center mt-4 text-sm";
-
-            emailjs.sendForm(
-                "service_4nm9ewo",   // 🔴 PUT SERVICE ID HERE
-                "template_ype313l",  // 🔴 PUT TEMPLATE ID HERE
-                this
-            )
-            .then(() => {
-                statusText.textContent = "Message sent successfully! ✅";
-                statusText.className = "text-green-400 text-center mt-4 text-sm";
-                form.reset();
-            })
-            .catch(() => {
-                statusText.textContent = "Failed to send message. Please try again ❌";
-                statusText.className = "text-red-400 text-center mt-4 text-sm";
-            });
-        });
-    </script> -->
 </head>
 <body class="bg-dark">
     <!-- Navigation -->
@@ -752,6 +722,13 @@
                                 placeholder="Tell me about your project or just say hi!"
                                 required></textarea>
                         </div>
+                        <!-- 🛡️ SECURITY: HONEYPOT FIELD (ACTIVE) - Catches bots that try to fill hidden fields -->
+                        <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" class="hidden" aria-hidden="true">
+                        
+                        <!-- 🔐 SECURITY: RECAPTCHA v2 (active) -->
+                        <div class="mb-6">
+                            <div class="g-recaptcha" data-sitekey="6LfNzQwtAAAAAHL7Kyo8LmLZOV_mtoNdtoYnCvL8"></div>
+                        </div>
                         
                         <button 
                             type="submit"
@@ -791,11 +768,7 @@
         </div>
     </footer>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        emailjs.init("gNtFK9MNmaa5ib2pc");
-    </script>   
-
 </body>
 </html>
